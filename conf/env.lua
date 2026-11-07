@@ -1,0 +1,6 @@
+-- 环境变量
+--
+-- 注意：这台机器只有 /dev/dri/card0（Intel i915），没有 card1。
+-- 旧的 ~/.config/hypr/env_var.conf 里有 AQ_DRM_DEVICES=/dev/dri/card1，
+-- 但 0.56 只读取 hyprland.lua，所以它以前从未生效。
+-- 迁移到 Lua 后反而会让 Hyprland 找不到 DRM 设备而启动失败，因此这里不要再设置。
