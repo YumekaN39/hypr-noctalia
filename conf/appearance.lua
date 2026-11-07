@@ -61,6 +61,8 @@ hl.config({
 	},
 })
 
+-- Spring曲线
+hl.curve( "rubber", { type = "spring", mass = 1, stiffness = 1234, damping = 100 } )
 
 -- 匹配最大化工作区中的非浮动窗口，去掉边框
 hl.window_rule({ match = { float = false, workspace = "f[1]" }, border_size = 0 })
@@ -71,7 +73,7 @@ hl.animation({ leaf = "windowsIn", enabled = true, speed = 3, bezier = "default"
 hl.animation({ leaf = "windowsOut", enabled = true, speed = 3.5, bezier = "default", style = "popin 80%" })
 -- 切工作区：滑动 + 淡入淡出
 hl.animation({ leaf = "workspaces", enabled = true, speed = 3, bezier = "default", style = "slidefade 20%" })
-hl.animation({ leaf = "windowsMove", enabled = true, speed = 4, bezier = "default" })
+hl.animation({ leaf = "windowsMove", enabled = true, speed = 3, spring = "rubber" })
 hl.animation({ leaf = "fade", enabled = true, speed = 3, bezier = "default" })
 hl.animation({ leaf = "border", enabled = true, speed = 3, bezier = "default" })
 
